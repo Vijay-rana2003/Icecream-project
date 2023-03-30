@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% comment %} temp inherit {% endcomment %}
+{% block title %} Contact{% endblock title %} 
+{% block boby %} 
+<div class="container-fluid px-0">
+    <img src="https://source.unsplash.com/1200x400/?phone,contact" class="d-block w-100 my-4" alt="...">
+</div>
+<h2 class="text-centre"> Contact Us </h2>
+<div class="container">
+    <form method="post" action="/contact">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" class="form-control" id="email" nname="email" placeholder="exampple@exampple.com">
+        </div>
+        <div class="form-group">
+          <label for="number">Phone number</label>
+          <input type="phone" class="form-control" id="number" name="phone" placeholder="enter your number">
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Please provide description</label>
+            <textarea  class="form-control" name="desc" id="desc" rows="3" name="desc"></textarea> 
+          </div>
+        
+          <button>
+            <button class="btn btn-primary" type="submit">submit</button>
+          </button>
+      </form>
+</div>
+
+{% endblock boby %}
